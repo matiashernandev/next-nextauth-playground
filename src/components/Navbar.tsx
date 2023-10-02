@@ -22,7 +22,15 @@ export default function Navbar() {
             src={session.user.image ?? ""}
             className="w-10 h-10 rounded-full cursor-pointer"
           />
-          <button onClick={() => signOut()}>Sign out</button>
+          <button
+            onClick={() =>
+              signOut({
+                callbackUrl: "/"
+              })
+            }
+          >
+            Sign out
+          </button>
         </div>
       ) : (
         <button
